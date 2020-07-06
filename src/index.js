@@ -8,7 +8,11 @@ import reduxThunk from "redux-thunk";
 import reducer from "./reducers/index";
 import App from "./components/App";
 
-const store = createStore(reducer, applyMiddleware(reduxThunk));
+const store = createStore(
+  reducer,
+  { auth: { authenticated: localStorage.getItem("token") } },
+  applyMiddleware(reduxThunk)
+);
 
 ReactDOM.render(
   <Provider store={store}>
