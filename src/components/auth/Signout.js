@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { signout } from "../actions/index";
+import { signout } from "../../actions/index";
 
 class Signout extends Component {
   componentDidMount() {
@@ -13,4 +13,4 @@ class Signout extends Component {
   }
 }
 
-export default connect(null, signout)(Signout);
+export default connect(null, { signout })(Signout);
