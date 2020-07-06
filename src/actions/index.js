@@ -16,3 +16,9 @@ export const signup = (formValues, callback) => async dispatch => {
     dispatch({ type: "AUTH_ERROR", payload: "Email Already in use" });
   }
 };
+
+export const signout = () => {
+  localStorage.removeItem("token");
+
+  return { type: "AUTH_USER", payload: "" };
+};
