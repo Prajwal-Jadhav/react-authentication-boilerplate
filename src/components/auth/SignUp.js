@@ -7,7 +7,9 @@ import { signup } from "../../actions/index";
 
 class SignUp extends Component {
   onFormSubmit = formValues => {
-    this.props.signup(formValues);
+    this.props.signup(formValues, () => {
+      this.props.history.push("/feature");
+    });
   };
 
   render() {
